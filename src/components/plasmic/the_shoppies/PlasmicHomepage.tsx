@@ -187,7 +187,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   </span>
                   <React.Fragment>
                     {
-                      " movies of the year using the search bar below, your nominations will be saved when leaving this site."
+                      " movies of the year using the search bar below, your nominations will be saved even when leaving this site!"
                     }
                   </React.Fragment>
                 </React.Fragment>

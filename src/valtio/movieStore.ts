@@ -1,4 +1,4 @@
-import { proxy } from "valtio";
+import { proxy, subscribe } from "valtio";
 import { devtools } from "valtio/utils";
 
 // types
@@ -21,13 +21,20 @@ export interface Movie {
   vote_count: number;
 }
 
-// store
+// store with local storage
+const storedMovieStore = localStorage.getItem("movieStore");
+
 export const movieStore = proxy<{
   movieQueryString: MovieQueryString;
   nominatedMovies: Movie[];
-}>({
-  movieQueryString: "",
-  nominatedMovies: [],
+}>(
+  storedMovieStore
+    ? JSON.parse(storedMovieStore)
+    : { movieQueryString: "", nominatedMovies: [] }
+);
+
+subscribe(movieStore, () => {
+  localStorage.setItem("movieStore", JSON.stringify(movieStore));
 });
 
 // enable redux devtools extension
