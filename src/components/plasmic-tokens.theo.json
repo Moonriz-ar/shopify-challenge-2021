@@ -31,13 +31,33 @@
       }
     },
     {
+      "name": "secondary-100",
+      "type": "color",
+      "value": "#C1C1C1",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "a3rpnloOa"
+      }
+    },
+    {
       "name": "secondary-300",
       "type": "color",
-      "value": "#3A3A3A",
+      "value": "#4D4D4D",
       "category": "color",
       "meta": {
         "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
         "id": "Dq5z1Fk83"
+      }
+    },
+    {
+      "name": "secondary-50",
+      "type": "color",
+      "value": "#D9D9D9",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "p65L8X1iX"
       }
     },
     {

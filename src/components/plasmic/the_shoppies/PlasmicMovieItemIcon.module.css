@@ -18,7 +18,7 @@
   background: var(--token-uqQf8_MBm);
 }
 .root_delete {
-  background: var(--token-Ev9Bxuf9c);
+  background: var(--token-a3rpnloOa);
 }
 .root:hover {
   background: var(--token-VNf7Qsr15);
@@ -30,7 +30,7 @@
   display: flex;
 }
 .root_delete:hover {
-  background: var(--token-OkZKPGi6r);
+  background: var(--token-p65L8X1iX);
   transform: translateX(0px) translateY(0px) translateZ(0px);
 }
 .text {
@@ -52,7 +52,7 @@
   color: var(--token-VNf7Qsr15);
 }
 .text_delete {
-  color: var(--token-ECrlptamg);
+  color: var(--token-Dq5z1Fk83);
   width: auto;
   font-size: 12px;
 }

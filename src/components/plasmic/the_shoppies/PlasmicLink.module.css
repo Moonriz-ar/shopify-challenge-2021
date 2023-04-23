@@ -1,10 +1,12 @@
 .root {
-  color: var(--token-uqQf8_MBm);
   position: relative;
+  color: var(--token-uqQf8_MBm);
   font-weight: 700;
+  cursor: pointer;
+  border-width: 0px;
 }
 .root:visited {
-  color: var(--token-uqQf8_MBm);
+  color: var(--token-VNf7Qsr15);
 }
 .root:hover {
   color: var(--token-VNf7Qsr15);

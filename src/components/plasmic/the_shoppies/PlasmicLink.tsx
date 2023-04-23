@@ -48,7 +48,7 @@ type ArgPropType = keyof PlasmicLink__ArgsType;
 export const PlasmicLink__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLink__OverridesType = {
-  root?: p.Flex<"a">;
+  root?: p.Flex<"button">;
 };
 
 export interface DefaultLinkProps {
@@ -85,14 +85,14 @@ function PlasmicLink__RenderFunc(props: {
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
-    <a
+    <button
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
         projectcss.all,
-        projectcss.a,
+        projectcss.button,
         projectcss.__wab_text,
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
@@ -100,10 +100,9 @@ function PlasmicLink__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root
       )}
-      href={"https://www.plasmic.app/" as const}
     >
       {"clear"}
-    </a>
+    </button>
   ) as React.ReactElement | null;
 }
 
@@ -114,7 +113,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "a";
+  root: "button";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
