@@ -53,6 +53,7 @@ export const PlasmicSearchResults__ArgProps = new Array<ArgPropType>("title");
 export type PlasmicSearchResults__OverridesType = {
   root?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
+  movieItemsContainer?: p.Flex<"div">;
 };
 
 export interface DefaultSearchResultsProps {
@@ -123,50 +124,55 @@ function PlasmicSearchResults__RenderFunc(props: {
           className: classNames(sty.slotTargetTitle)
         })}
       </h1>
-      <MovieItem
-        addIcon={"disabled" as const}
-        className={classNames("__wab_instance", sty.movieItem___8KZEv)}
-      />
+      {true ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"movieItemsContainer"}
+          data-plasmic-override={overrides.movieItemsContainer}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.movieItemsContainer)}
+        >
+          <MovieItem
+            addIcon={"disabled" as const}
+            className={classNames("__wab_instance", sty.movieItem___8KZEv)}
+          />
 
-      <MovieItem
-        addIcon={"withAddIcon" as const}
-        className={classNames("__wab_instance", sty.movieItem__ucykO)}
-      >
-        {triggers.hover_root
-          ? "The Super Mario Bros. Movie"
-          : "The Super Mario Bros. Movie"}
-      </MovieItem>
-      <MovieItem
-        addIcon={"withAddIcon" as const}
-        className={classNames("__wab_instance", sty.movieItem__bPdp1)}
-      >
-        {"Shazam! Fury of the Gods"}
-      </MovieItem>
-      <MovieItem
-        addIcon={"withAddIcon" as const}
-        className={classNames("__wab_instance", sty.movieItem__bRe3G)}
-      >
-        {"Evil Dead Rise"}
-      </MovieItem>
-      <MovieItem
-        addIcon={"withAddIcon" as const}
-        className={classNames("__wab_instance", sty.movieItem__l0Nnc)}
-      >
-        {"The Pope's Exorcist"}
-      </MovieItem>
-      <MovieItem
-        addIcon={"withAddIcon" as const}
-        className={classNames("__wab_instance", sty.movieItem__jesk6)}
-      >
-        {"Suzume"}
-      </MovieItem>
+          <MovieItem
+            addIcon={"withAddIcon" as const}
+            className={classNames("__wab_instance", sty.movieItem__ucykO)}
+          >
+            {triggers.hover_root
+              ? "The Super Mario Bros. Movie"
+              : "The Super Mario Bros. Movie"}
+          </MovieItem>
+          <MovieItem
+            addIcon={"withAddIcon" as const}
+            className={classNames("__wab_instance", sty.movieItem__bPdp1)}
+          >
+            {"Shazam! Fury of the Gods"}
+          </MovieItem>
+          <MovieItem
+            addIcon={"withAddIcon" as const}
+            className={classNames("__wab_instance", sty.movieItem__bRe3G)}
+          >
+            {"Evil Dead Rise"}
+          </MovieItem>
+          <MovieItem
+            addIcon={"withAddIcon" as const}
+            className={classNames("__wab_instance", sty.movieItem__l0Nnc)}
+          >
+            {"The Pope's Exorcist"}
+          </MovieItem>
+        </p.Stack>
+      ) : null}
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1"],
-  h1: ["h1"]
+  root: ["root", "h1", "movieItemsContainer"],
+  h1: ["h1"],
+  movieItemsContainer: ["movieItemsContainer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -174,6 +180,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   h1: "h1";
+  movieItemsContainer: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -237,6 +244,7 @@ export const PlasmicSearchResults = Object.assign(
   {
     // Helper components rendering sub-elements
     h1: makeNodeComponent("h1"),
+    movieItemsContainer: makeNodeComponent("movieItemsContainer"),
 
     // Metadata about props expected for PlasmicSearchResults
     internalVariantProps: PlasmicSearchResults__VariantProps,

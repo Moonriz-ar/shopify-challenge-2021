@@ -5,7 +5,7 @@ import {
 } from "./plasmic/the_shoppies/PlasmicSearchBar";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
-import { movieStore, setMovieQueryString } from "../valtio/movieStore";
+import { setMovieQueryString } from "../valtio/movieStore";
 
 export interface SearchBarProps extends DefaultSearchBarProps {}
 

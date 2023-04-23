@@ -35,8 +35,6 @@ import {
 import SearchBar from "../../SearchBar"; // plasmic-import: dttfoU6lxO/component
 import SearchResults from "../../SearchResults"; // plasmic-import: cmM4gm4zl6/component
 import Nominations from "../../Nominations"; // plasmic-import: JXOduyYvIR/component
-import Link from "../../Link"; // plasmic-import: IlC1hBC6tr/component
-import Button from "../../Button"; // plasmic-import: WLQZ7PHxvJH/component
 
 import { useScreenVariants as useScreenVariantsa3NNzie5OThQ6 } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: A3NNzie5oThQ6/globalVariant
 
@@ -44,9 +42,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_the_shoppies.module.css"; // plasmic-import: w9YkCMoNAxdUdLu1fVbgUv/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: EM_oZrB6CcZo/css
-
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: bGh_ZG8CEgo/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: -i3g9EMhH9P/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 export type PlasmicHomepage__VariantsArgs = {};
@@ -61,12 +56,11 @@ export type PlasmicHomepage__OverridesType = {
   home?: p.Flex<"div">;
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
+  link?: p.Flex<"a">;
   columns?: p.Flex<"div">;
   searchBar?: p.Flex<typeof SearchBar>;
   searchResults?: p.Flex<typeof SearchResults>;
   nominations?: p.Flex<typeof Nominations>;
-  freeBox?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
 };
 
 export interface DefaultHomepageProps {
@@ -156,12 +150,14 @@ function PlasmicHomepage__RenderFunc(props: {
                   </React.Fragment>
                   {
                     <a
+                      data-plasmic-name={"link"}
+                      data-plasmic-override={overrides.link}
                       className={classNames(
                         projectcss.all,
                         projectcss.a,
                         projectcss.__wab_text,
                         projectcss.plasmic_default__inline,
-                        sty.link__kOUaq
+                        sty.link
                       )}
                       href={
                         "https://docs.google.com/document/d/13pa4onOfawHuSa7dJ9wzQmsBOU8hHPpXqCXUyeEXakQ/edit?usp=sharing" as const
@@ -235,25 +231,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   />
                 </div>
               </p.Stack>
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"freeBox"}
-                data-plasmic-override={overrides.freeBox}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox)}
-              >
-                <Link
-                  className={classNames("__wab_instance", sty.link__aNur7)}
-                />
-
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                >
-                  {"save"}
-                </Button>
-              </p.Stack>
             </section>
           ) : null}
         </div>
@@ -267,30 +244,27 @@ const PlasmicDescendants = {
     "home",
     "section",
     "h1",
+    "link",
     "columns",
     "searchBar",
     "searchResults",
-    "nominations",
-    "freeBox",
-    "button"
+    "nominations"
   ],
   section: [
     "section",
     "h1",
+    "link",
     "columns",
     "searchBar",
     "searchResults",
-    "nominations",
-    "freeBox",
-    "button"
+    "nominations"
   ],
   h1: ["h1"],
+  link: ["link"],
   columns: ["columns", "searchBar", "searchResults", "nominations"],
   searchBar: ["searchBar"],
   searchResults: ["searchResults"],
-  nominations: ["nominations"],
-  freeBox: ["freeBox", "button"],
-  button: ["button"]
+  nominations: ["nominations"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -299,12 +273,11 @@ type NodeDefaultElementType = {
   home: "div";
   section: "section";
   h1: "h1";
+  link: "a";
   columns: "div";
   searchBar: typeof SearchBar;
   searchResults: typeof SearchResults;
   nominations: typeof Nominations;
-  freeBox: "div";
-  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -369,12 +342,11 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
+    link: makeNodeComponent("link"),
     columns: makeNodeComponent("columns"),
     searchBar: makeNodeComponent("searchBar"),
     searchResults: makeNodeComponent("searchResults"),
     nominations: makeNodeComponent("nominations"),
-    freeBox: makeNodeComponent("freeBox"),
-    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
