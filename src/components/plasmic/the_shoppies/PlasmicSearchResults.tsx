@@ -32,7 +32,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import MovieItem from "../../MovieItem"; // plasmic-import: Z1TaGzJ1L3/component
+import ResultsMovieItem from "../../ResultsMovieItem"; // plasmic-import: Z1TaGzJ1L3/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -90,11 +90,6 @@ function PlasmicSearchResults__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
   const [$queries, setDollarQueries] = React.useState({});
 
-  const [isRootHover, triggerRootHoverProps] = useTrigger("useHover", {});
-  const triggers = {
-    hover_root: isRootHover
-  };
-
   return (
     <p.Stack
       as={"div"}
@@ -111,7 +106,6 @@ function PlasmicSearchResults__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root
       )}
-      data-plasmic-trigger-props={[triggerRootHoverProps]}
     >
       <h1
         data-plasmic-name={"h1"}
@@ -132,37 +126,46 @@ function PlasmicSearchResults__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.movieItemsContainer)}
         >
-          <MovieItem
-            addIcon={"disabled" as const}
-            className={classNames("__wab_instance", sty.movieItem___8KZEv)}
+          <ResultsMovieItem
+            className={classNames(
+              "__wab_instance",
+              sty.resultsMovieItem___8KZEv
+            )}
+            disabled={true}
           />
 
-          <MovieItem
-            addIcon={"withAddIcon" as const}
-            className={classNames("__wab_instance", sty.movieItem__ucykO)}
+          <ResultsMovieItem
+            className={classNames(
+              "__wab_instance",
+              sty.resultsMovieItem__ucykO
+            )}
           >
-            {triggers.hover_root
-              ? "The Super Mario Bros. Movie"
-              : "The Super Mario Bros. Movie"}
-          </MovieItem>
-          <MovieItem
-            addIcon={"withAddIcon" as const}
-            className={classNames("__wab_instance", sty.movieItem__bPdp1)}
+            {"The Super Mario Bros. Movie"}
+          </ResultsMovieItem>
+          <ResultsMovieItem
+            className={classNames(
+              "__wab_instance",
+              sty.resultsMovieItem__bPdp1
+            )}
           >
             {"Shazam! Fury of the Gods"}
-          </MovieItem>
-          <MovieItem
-            addIcon={"withAddIcon" as const}
-            className={classNames("__wab_instance", sty.movieItem__bRe3G)}
+          </ResultsMovieItem>
+          <ResultsMovieItem
+            className={classNames(
+              "__wab_instance",
+              sty.resultsMovieItem__bRe3G
+            )}
           >
             {"Evil Dead Rise"}
-          </MovieItem>
-          <MovieItem
-            addIcon={"withAddIcon" as const}
-            className={classNames("__wab_instance", sty.movieItem__l0Nnc)}
+          </ResultsMovieItem>
+          <ResultsMovieItem
+            className={classNames(
+              "__wab_instance",
+              sty.resultsMovieItem__l0Nnc
+            )}
           >
             {"The Pope's Exorcist"}
-          </MovieItem>
+          </ResultsMovieItem>
         </p.Stack>
       ) : null}
     </p.Stack>

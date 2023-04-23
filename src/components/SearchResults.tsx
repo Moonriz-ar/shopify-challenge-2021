@@ -9,8 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { useSnapshot } from "valtio";
 import { Movie, movieStore } from "../valtio/movieStore";
-import MovieItem from "./MovieItem";
-// import MovieItem from "./MovieItem";
+import ResultsMovieItem from "./ResultsMovieItem";
 
 export interface SearchResultsProps extends DefaultSearchResultsProps {}
 
@@ -53,11 +52,7 @@ function SearchResults_(
       {...props}
       movieItemsContainer={{
         children: data.map((movie) => {
-          const movieTitle = `${movie.title} (${movie.release_date.slice(
-            0,
-            4
-          )})`;
-          return <MovieItem>{movieTitle}</MovieItem>;
+          return <ResultsMovieItem movie={movie} />;
         }),
       }}
       // populate slots

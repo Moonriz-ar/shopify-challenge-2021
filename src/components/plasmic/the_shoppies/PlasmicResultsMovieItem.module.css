@@ -1,0 +1,75 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  min-width: 0;
+  border-radius: 4px;
+  padding: 8px;
+}
+.rootdisabled {
+  cursor: not-allowed;
+}
+.root:hover {
+  background: var(--token-sPaTureut);
+}
+.freeBox {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  border-radius: 0px;
+  padding: 0px;
+}
+.freeBox > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.freeBox > :global(.__wab_flex-container) > *,
+.freeBox > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox > :global(.__wab_flex-container) > picture > img,
+.freeBox
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+}
+.freeBox {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  border-radius: 0px;
+  padding: 0px;
+}
+.root:hover .freeBox {
+  border-radius: 0px;
+  padding: 0px;
+}
+.root:hover .freeBox {
+  border-radius: 0px;
+  padding: 0px;
+}
+.movieItemIcon:global(.__wab_instance) {
+  position: relative;
+}
+.slotTargetChildren {
+  color: var(--token-Ev9Bxuf9c);
+}

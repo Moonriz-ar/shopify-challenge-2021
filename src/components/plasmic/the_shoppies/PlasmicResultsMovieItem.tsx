@@ -37,34 +37,36 @@ import MovieItemIcon from "../../MovieItemIcon"; // plasmic-import: XShnP_NaZ3/c
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_the_shoppies.module.css"; // plasmic-import: w9YkCMoNAxdUdLu1fVbgUv/projectcss
-import sty from "./PlasmicMovieItem.module.css"; // plasmic-import: Z1TaGzJ1L3/css
+import sty from "./PlasmicResultsMovieItem.module.css"; // plasmic-import: Z1TaGzJ1L3/css
 
-export type PlasmicMovieItem__VariantMembers = {
-  withAddIcon: "withAddIcon" | "disabled";
+export type PlasmicResultsMovieItem__VariantMembers = {
+  disabled: "disabled";
 };
-export type PlasmicMovieItem__VariantsArgs = {
-  withAddIcon?: SingleChoiceArg<"withAddIcon" | "disabled">;
+export type PlasmicResultsMovieItem__VariantsArgs = {
+  disabled?: SingleBooleanChoiceArg<"disabled">;
 };
-type VariantPropType = keyof PlasmicMovieItem__VariantsArgs;
-export const PlasmicMovieItem__VariantProps = new Array<VariantPropType>(
-  "withAddIcon"
+type VariantPropType = keyof PlasmicResultsMovieItem__VariantsArgs;
+export const PlasmicResultsMovieItem__VariantProps = new Array<VariantPropType>(
+  "disabled"
 );
 
-export type PlasmicMovieItem__ArgsType = {
+export type PlasmicResultsMovieItem__ArgsType = {
   children?: React.ReactNode;
 };
-type ArgPropType = keyof PlasmicMovieItem__ArgsType;
-export const PlasmicMovieItem__ArgProps = new Array<ArgPropType>("children");
+type ArgPropType = keyof PlasmicResultsMovieItem__ArgsType;
+export const PlasmicResultsMovieItem__ArgProps = new Array<ArgPropType>(
+  "children"
+);
 
-export type PlasmicMovieItem__OverridesType = {
+export type PlasmicResultsMovieItem__OverridesType = {
   root?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
   movieItemIcon?: p.Flex<typeof MovieItemIcon>;
 };
 
-export interface DefaultMovieItemProps {
+export interface DefaultResultsMovieItemProps {
   children?: React.ReactNode;
-  withAddIcon?: SingleChoiceArg<"withAddIcon" | "disabled">;
+  disabled?: SingleBooleanChoiceArg<"disabled">;
   className?: string;
 }
 
@@ -76,10 +78,10 @@ const __wrapUserPromise =
     return await promise;
   });
 
-function PlasmicMovieItem__RenderFunc(props: {
-  variants: PlasmicMovieItem__VariantsArgs;
-  args: PlasmicMovieItem__ArgsType;
-  overrides: PlasmicMovieItem__OverridesType;
+function PlasmicResultsMovieItem__RenderFunc(props: {
+  variants: PlasmicResultsMovieItem__VariantsArgs;
+  args: PlasmicResultsMovieItem__ArgsType;
+  overrides: PlasmicResultsMovieItem__OverridesType;
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
@@ -99,10 +101,10 @@ function PlasmicMovieItem__RenderFunc(props: {
   const stateSpecs = React.useMemo(
     () => [
       {
-        path: "withAddIcon",
+        path: "disabled",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.withAddIcon
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.disabled
       }
     ],
     [$props, $ctx]
@@ -121,7 +123,8 @@ function PlasmicMovieItem__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.root
+        sty.root,
+        { [sty.rootdisabled]: hasVariant($state, "disabled", "disabled") }
       )}
     >
       <p.Stack
@@ -129,31 +132,20 @@ function PlasmicMovieItem__RenderFunc(props: {
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
         hasGap={true}
-        className={classNames(projectcss.all, sty.freeBox, {
-          [sty.freeBoxwithAddIcon_withAddIcon]: hasVariant(
-            $state,
-            "withAddIcon",
-            "withAddIcon"
-          )
-        })}
+        className={classNames(projectcss.all, sty.freeBox)}
       >
         <MovieItemIcon
           data-plasmic-name={"movieItemIcon"}
           data-plasmic-override={overrides.movieItemIcon}
           className={classNames("__wab_instance", sty.movieItemIcon, {
-            [sty.movieItemIconwithAddIcon_disabled]: hasVariant(
+            [sty.movieItemIcondisabled]: hasVariant(
               $state,
-              "withAddIcon",
+              "disabled",
               "disabled"
-            ),
-            [sty.movieItemIconwithAddIcon_withAddIcon]: hasVariant(
-              $state,
-              "withAddIcon",
-              "withAddIcon"
             )
           })}
           disabled={
-            hasVariant($state, "withAddIcon", "disabled") ? true : undefined
+            hasVariant($state, "disabled", "disabled") ? true : undefined
           }
         />
 
@@ -161,15 +153,10 @@ function PlasmicMovieItem__RenderFunc(props: {
           defaultContents: "John Wick 4",
           value: args.children,
           className: classNames(sty.slotTargetChildren, {
-            [sty.slotTargetChildrenwithAddIcon_disabled]: hasVariant(
+            [sty.slotTargetChildrendisabled]: hasVariant(
               $state,
-              "withAddIcon",
+              "disabled",
               "disabled"
-            ),
-            [sty.slotTargetChildrenwithAddIcon_withAddIcon]: hasVariant(
-              $state,
-              "withAddIcon",
-              "withAddIcon"
             )
           })
         })}
@@ -194,18 +181,18 @@ type NodeDefaultElementType = {
 
 type ReservedPropsType = "variants" | "args" | "overrides";
 type NodeOverridesType<T extends NodeNameType> = Pick<
-  PlasmicMovieItem__OverridesType,
+  PlasmicResultsMovieItem__OverridesType,
   DescendantsType<T>
 >;
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
-    variants?: PlasmicMovieItem__VariantsArgs;
-    args?: PlasmicMovieItem__ArgsType;
+    variants?: PlasmicResultsMovieItem__VariantsArgs;
+    args?: PlasmicResultsMovieItem__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicMovieItem__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } & Omit<PlasmicResultsMovieItem__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     /* Specify args directly as props*/ Omit<
-      PlasmicMovieItem__ArgsType,
+      PlasmicResultsMovieItem__ArgsType,
       ReservedPropsType
     > &
     /* Specify overrides for each element directly as props*/ Omit<
@@ -227,12 +214,12 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         deriveRenderOpts(props, {
           name: nodeName,
           descendantNames: [...PlasmicDescendants[nodeName]],
-          internalArgPropNames: PlasmicMovieItem__ArgProps,
-          internalVariantPropNames: PlasmicMovieItem__VariantProps
+          internalArgPropNames: PlasmicResultsMovieItem__ArgProps,
+          internalVariantPropNames: PlasmicResultsMovieItem__VariantProps
         }),
       [props, nodeName]
     );
-    return PlasmicMovieItem__RenderFunc({
+    return PlasmicResultsMovieItem__RenderFunc({
       variants,
       args,
       overrides,
@@ -240,26 +227,26 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
     });
   };
   if (nodeName === "root") {
-    func.displayName = "PlasmicMovieItem";
+    func.displayName = "PlasmicResultsMovieItem";
   } else {
-    func.displayName = `PlasmicMovieItem.${nodeName}`;
+    func.displayName = `PlasmicResultsMovieItem.${nodeName}`;
   }
   return func;
 }
 
-export const PlasmicMovieItem = Object.assign(
-  // Top-level PlasmicMovieItem renders the root element
+export const PlasmicResultsMovieItem = Object.assign(
+  // Top-level PlasmicResultsMovieItem renders the root element
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
     freeBox: makeNodeComponent("freeBox"),
     movieItemIcon: makeNodeComponent("movieItemIcon"),
 
-    // Metadata about props expected for PlasmicMovieItem
-    internalVariantProps: PlasmicMovieItem__VariantProps,
-    internalArgProps: PlasmicMovieItem__ArgProps
+    // Metadata about props expected for PlasmicResultsMovieItem
+    internalVariantProps: PlasmicResultsMovieItem__VariantProps,
+    internalArgProps: PlasmicResultsMovieItem__ArgProps
   }
 );
 
-export default PlasmicMovieItem;
+export default PlasmicResultsMovieItem;
 /* prettier-ignore-end */

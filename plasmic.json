@@ -122,19 +122,6 @@
           "componentType": "component"
         },
         {
-          "id": "Z1TaGzJ1L3",
-          "name": "MovieItem",
-          "type": "managed",
-          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
-          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicMovieItem.tsx",
-          "importSpec": {
-            "modulePath": "MovieItem.tsx"
-          },
-          "cssFilePath": "plasmic/the_shoppies/PlasmicMovieItem.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "XShnP_NaZ3",
           "name": "MovieItemIcon",
           "type": "managed",
@@ -144,6 +131,32 @@
             "modulePath": "MovieItemIcon.tsx"
           },
           "cssFilePath": "plasmic/the_shoppies/PlasmicMovieItemIcon.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Z1TaGzJ1L3",
+          "name": "ResultsMovieItem",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicResultsMovieItem.tsx",
+          "importSpec": {
+            "modulePath": "ResultsMovieItem.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicResultsMovieItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "kIOmyFUrm1U",
+          "name": "NominationsMovieItem",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicNominationsMovieItem.tsx",
+          "importSpec": {
+            "modulePath": "NominationsMovieItem.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicNominationsMovieItem.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
