@@ -19,6 +19,8 @@
   --plasmic-token-secondary-100: var(--token-a3rpnloOa);
   --token-p65L8X1iX: #d9d9d9;
   --plasmic-token-secondary-50: var(--token-p65L8X1iX);
+  --token-sPaTureut: #3c3d3c;
+  --plasmic-token-secondary-400: var(--token-sPaTureut);
 }
 
 .plasmic_tokens {

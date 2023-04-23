@@ -51,6 +51,16 @@
       }
     },
     {
+      "name": "secondary-400",
+      "type": "color",
+      "value": "#3C3D3C",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "sPaTureut"
+      }
+    },
+    {
       "name": "secondary-50",
       "type": "color",
       "value": "#D9D9D9",
