@@ -1,20 +1,20 @@
 import * as React from "react";
 import {
   PlasmicButton,
-  DefaultButtonProps
+  DefaultButtonProps,
 } from "./plasmic/the_shoppies/PlasmicButton";
 import {
   ButtonRef,
   HtmlAnchorOnlyProps,
-  HtmlButtonOnlyProps
+  HtmlButtonOnlyProps,
 } from "@plasmicapp/react-web";
 
-export interface ButtonProps extends DefaultButtonProps {
-  // Feel free to add any additional props that this component should receive
+export interface ButtonProps {
+  onClick: () => void;
 }
 function Button_(props: ButtonProps, ref: ButtonRef) {
-  const { plasmicProps } = PlasmicButton.useBehavior<ButtonProps>(props, ref);
-  return <PlasmicButton {...plasmicProps} />;
+  const { onClick } = props;
+  return <PlasmicButton {...props} onClick={onClick} />;
 }
 
 export type ButtonComponentType = {
@@ -32,5 +32,5 @@ export type ButtonComponentType = {
 const Button = React.forwardRef(Button_) as any as ButtonComponentType;
 
 export default Object.assign(Button, {
-  __plumeType: "button"
+  __plumeType: "button",
 });

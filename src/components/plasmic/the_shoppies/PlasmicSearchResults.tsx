@@ -45,12 +45,10 @@ type VariantPropType = keyof PlasmicSearchResults__VariantsArgs;
 export const PlasmicSearchResults__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicSearchResults__ArgsType = {
-  children?: React.ReactNode;
+  title?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicSearchResults__ArgsType;
-export const PlasmicSearchResults__ArgProps = new Array<ArgPropType>(
-  "children"
-);
+export const PlasmicSearchResults__ArgProps = new Array<ArgPropType>("title");
 
 export type PlasmicSearchResults__OverridesType = {
   root?: p.Flex<"div">;
@@ -58,7 +56,7 @@ export type PlasmicSearchResults__OverridesType = {
 };
 
 export interface DefaultSearchResultsProps {
-  children?: React.ReactNode;
+  title?: React.ReactNode;
   className?: string;
 }
 
@@ -91,6 +89,11 @@ function PlasmicSearchResults__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
   const [$queries, setDollarQueries] = React.useState({});
 
+  const [isRootHover, triggerRootHoverProps] = useTrigger("useHover", {});
+  const triggers = {
+    hover_root: isRootHover
+  };
+
   return (
     <p.Stack
       as={"div"}
@@ -107,6 +110,7 @@ function PlasmicSearchResults__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root
       )}
+      data-plasmic-trigger-props={[triggerRootHoverProps]}
     >
       <h1
         data-plasmic-name={"h1"}
@@ -115,20 +119,22 @@ function PlasmicSearchResults__RenderFunc(props: {
       >
         {p.renderPlasmicSlot({
           defaultContents: "Search results for slot",
-          value: args.children,
-          className: classNames(sty.slotTargetChildren)
+          value: args.title,
+          className: classNames(sty.slotTargetTitle)
         })}
       </h1>
       <MovieItem
-        addIcon={"withAddIcon" as const}
+        addIcon={"disabled" as const}
         className={classNames("__wab_instance", sty.movieItem___8KZEv)}
       />
 
       <MovieItem
-        addIcon={"disabled" as const}
+        addIcon={"withAddIcon" as const}
         className={classNames("__wab_instance", sty.movieItem__ucykO)}
       >
-        {"The Super Mario Bros. Movie"}
+        {triggers.hover_root
+          ? "The Super Mario Bros. Movie"
+          : "The Super Mario Bros. Movie"}
       </MovieItem>
       <MovieItem
         addIcon={"withAddIcon" as const}
@@ -143,7 +149,7 @@ function PlasmicSearchResults__RenderFunc(props: {
         {"Evil Dead Rise"}
       </MovieItem>
       <MovieItem
-        addIcon={"disabled" as const}
+        addIcon={"withAddIcon" as const}
         className={classNames("__wab_instance", sty.movieItem__l0Nnc)}
       >
         {"The Pope's Exorcist"}

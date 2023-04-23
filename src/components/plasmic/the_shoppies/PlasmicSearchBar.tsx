@@ -67,9 +67,9 @@ export type PlasmicSearchBar__OverridesType = {
   textInput?: p.Flex<typeof TextInput>;
   svg?: p.Flex<"svg">;
   freeBox?: p.Flex<"div">;
-  link?: p.Flex<typeof Link>;
-  button?: p.Flex<typeof Button>;
-  searchButton?: p.Flex<"div">;
+  clearSearchButton?: p.Flex<typeof Link>;
+  searchButton?: p.Flex<typeof Button>;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultSearchBarProps {
@@ -179,23 +179,23 @@ function PlasmicSearchBar__RenderFunc(props: {
         className={classNames(projectcss.all, sty.freeBox)}
       >
         <Link
-          data-plasmic-name={"link"}
-          data-plasmic-override={overrides.link}
-          className={classNames("__wab_instance", sty.link)}
+          data-plasmic-name={"clearSearchButton"}
+          data-plasmic-override={overrides.clearSearchButton}
+          className={classNames("__wab_instance", sty.clearSearchButton)}
         />
 
         <Button
-          data-plasmic-name={"button"}
-          data-plasmic-override={overrides.button}
-          className={classNames("__wab_instance", sty.button)}
+          data-plasmic-name={"searchButton"}
+          data-plasmic-override={overrides.searchButton}
+          className={classNames("__wab_instance", sty.searchButton)}
         >
           <div
-            data-plasmic-name={"searchButton"}
-            data-plasmic-override={overrides.searchButton}
+            data-plasmic-name={"text"}
+            data-plasmic-override={overrides.text}
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
-              sty.searchButton
+              sty.text
             )}
           >
             {"search"}
@@ -213,17 +213,17 @@ const PlasmicDescendants = {
     "textInput",
     "svg",
     "freeBox",
-    "link",
-    "button",
-    "searchButton"
+    "clearSearchButton",
+    "searchButton",
+    "text"
   ],
   h2: ["h2"],
   textInput: ["textInput", "svg"],
   svg: ["svg"],
-  freeBox: ["freeBox", "link", "button", "searchButton"],
-  link: ["link"],
-  button: ["button", "searchButton"],
-  searchButton: ["searchButton"]
+  freeBox: ["freeBox", "clearSearchButton", "searchButton", "text"],
+  clearSearchButton: ["clearSearchButton"],
+  searchButton: ["searchButton", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -234,9 +234,9 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   svg: "svg";
   freeBox: "div";
-  link: typeof Link;
-  button: typeof Button;
-  searchButton: "div";
+  clearSearchButton: typeof Link;
+  searchButton: typeof Button;
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -303,9 +303,9 @@ export const PlasmicSearchBar = Object.assign(
     textInput: makeNodeComponent("textInput"),
     svg: makeNodeComponent("svg"),
     freeBox: makeNodeComponent("freeBox"),
-    link: makeNodeComponent("link"),
-    button: makeNodeComponent("button"),
+    clearSearchButton: makeNodeComponent("clearSearchButton"),
     searchButton: makeNodeComponent("searchButton"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicSearchBar
     internalVariantProps: PlasmicSearchBar__VariantProps,

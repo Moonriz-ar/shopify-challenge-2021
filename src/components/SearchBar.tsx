@@ -5,10 +5,45 @@ import {
 } from "./plasmic/the_shoppies/PlasmicSearchBar";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
+import { movieStore, setMovieQueryString } from "../valtio/movieStore";
+
 export interface SearchBarProps extends DefaultSearchBarProps {}
 
 function SearchBar_(props: SearchBarProps, ref: HTMLElementRefOf<"div">) {
-  return <PlasmicSearchBar root={{ ref }} {...props} />;
+  const [text, setText] = React.useState("");
+
+  const onClickSearch = () => {
+    setMovieQueryString(text);
+  };
+
+  const onClickClearSearch = () => {
+    setMovieQueryString("");
+    setText("");
+  };
+
+  return (
+    <PlasmicSearchBar
+      root={{ ref }}
+      {...props}
+      textInput={{
+        value: text,
+        onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+          setText(e.target.value);
+        },
+        onKeyDown: (e: React.KeyboardEvent) => {
+          if (e.key === "Enter") {
+            setMovieQueryString(text);
+          }
+        },
+      }}
+      searchButton={{
+        onClick: onClickSearch,
+      }}
+      clearSearchButton={{
+        onClick: onClickClearSearch,
+      }}
+    />
+  );
 }
 
 const SearchBar = React.forwardRef(SearchBar_);

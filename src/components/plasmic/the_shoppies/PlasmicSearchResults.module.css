@@ -51,7 +51,7 @@
   flex-direction: row;
   min-width: 0;
 }
-.slotTargetChildren {
+.slotTargetTitle {
   font-size: 24px;
   color: var(--token-Ev9Bxuf9c);
 }

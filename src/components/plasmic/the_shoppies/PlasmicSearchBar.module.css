@@ -115,10 +115,10 @@
   min-width: 0;
   padding: 8px;
 }
-.link:global(.__wab_instance) {
+.clearSearchButton:global(.__wab_instance) {
   position: relative;
 }
-.button:global(.__wab_instance) {
+.searchButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   margin-top: 0px;
