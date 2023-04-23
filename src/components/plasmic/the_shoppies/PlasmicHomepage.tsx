@@ -186,16 +186,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     {"top 5"}
                   </span>
                   <React.Fragment>
-                    {" movies of the year using the search bar below, use the "}
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"save"}
-                  </span>
-                  <React.Fragment>
-                    {" button to save your choices!"}
+                    {
+                      " movies of the year using the search bar below, your nominations will be saved when leaving this site."
+                    }
                   </React.Fragment>
                 </React.Fragment>
               </div>

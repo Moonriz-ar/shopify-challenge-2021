@@ -33,16 +33,23 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import NominationsMovieItem from "../../NominationsMovieItem"; // plasmic-import: kIOmyFUrm1U/component
+import Link from "../../Link"; // plasmic-import: IlC1hBC6tr/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_the_shoppies.module.css"; // plasmic-import: w9YkCMoNAxdUdLu1fVbgUv/projectcss
 import sty from "./PlasmicNominations.module.css"; // plasmic-import: JXOduyYvIR/css
 
-export type PlasmicNominations__VariantMembers = {};
-export type PlasmicNominations__VariantsArgs = {};
+export type PlasmicNominations__VariantMembers = {
+  isEmpty: "isEmpty";
+};
+export type PlasmicNominations__VariantsArgs = {
+  isEmpty?: SingleBooleanChoiceArg<"isEmpty">;
+};
 type VariantPropType = keyof PlasmicNominations__VariantsArgs;
-export const PlasmicNominations__VariantProps = new Array<VariantPropType>();
+export const PlasmicNominations__VariantProps = new Array<VariantPropType>(
+  "isEmpty"
+);
 
 export type PlasmicNominations__ArgsType = {};
 type ArgPropType = keyof PlasmicNominations__ArgsType;
@@ -52,9 +59,12 @@ export type PlasmicNominations__OverridesType = {
   root?: p.Flex<"div">;
   h2?: p.Flex<"h2">;
   movieItemsContainer?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
+  clearNominations?: p.Flex<typeof Link>;
 };
 
 export interface DefaultNominationsProps {
+  isEmpty?: SingleBooleanChoiceArg<"isEmpty">;
   className?: string;
 }
 
@@ -86,6 +96,18 @@ function PlasmicNominations__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
   const [$queries, setDollarQueries] = React.useState({});
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "isEmpty",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.isEmpty
+      }
+    ],
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   return (
     <p.Stack
@@ -111,18 +133,27 @@ function PlasmicNominations__RenderFunc(props: {
           projectcss.all,
           projectcss.h2,
           projectcss.__wab_text,
-          sty.h2
+          sty.h2,
+          { [sty.h2isEmpty]: hasVariant($state, "isEmpty", "isEmpty") }
         )}
       >
-        {"Your nominations"}
+        {hasVariant($state, "isEmpty", "isEmpty")
+          ? "Your nominations list is empty!"
+          : "Your nominations"}
       </h2>
-      {true ? (
+      {(hasVariant($state, "isEmpty", "isEmpty") ? true : true) ? (
         <p.Stack
           as={"div"}
           data-plasmic-name={"movieItemsContainer"}
           data-plasmic-override={overrides.movieItemsContainer}
           hasGap={true}
-          className={classNames(projectcss.all, sty.movieItemsContainer)}
+          className={classNames(projectcss.all, sty.movieItemsContainer, {
+            [sty.movieItemsContainerisEmpty]: hasVariant(
+              $state,
+              "isEmpty",
+              "isEmpty"
+            )
+          })}
         >
           <NominationsMovieItem
             className={classNames(
@@ -157,14 +188,39 @@ function PlasmicNominations__RenderFunc(props: {
           </NominationsMovieItem>
         </p.Stack>
       ) : null}
+      {(hasVariant($state, "isEmpty", "isEmpty") ? true : true) ? (
+        <div
+          data-plasmic-name={"freeBox"}
+          data-plasmic-override={overrides.freeBox}
+          className={classNames(projectcss.all, sty.freeBox, {
+            [sty.freeBoxisEmpty]: hasVariant($state, "isEmpty", "isEmpty")
+          })}
+        >
+          {(hasVariant($state, "isEmpty", "isEmpty") ? true : true) ? (
+            <Link
+              data-plasmic-name={"clearNominations"}
+              data-plasmic-override={overrides.clearNominations}
+              className={classNames("__wab_instance", sty.clearNominations, {
+                [sty.clearNominationsisEmpty]: hasVariant(
+                  $state,
+                  "isEmpty",
+                  "isEmpty"
+                )
+              })}
+            />
+          ) : null}
+        </div>
+      ) : null}
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h2", "movieItemsContainer"],
+  root: ["root", "h2", "movieItemsContainer", "freeBox", "clearNominations"],
   h2: ["h2"],
-  movieItemsContainer: ["movieItemsContainer"]
+  movieItemsContainer: ["movieItemsContainer"],
+  freeBox: ["freeBox", "clearNominations"],
+  clearNominations: ["clearNominations"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -173,6 +229,8 @@ type NodeDefaultElementType = {
   root: "div";
   h2: "h2";
   movieItemsContainer: "div";
+  freeBox: "div";
+  clearNominations: typeof Link;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -237,6 +295,8 @@ export const PlasmicNominations = Object.assign(
     // Helper components rendering sub-elements
     h2: makeNodeComponent("h2"),
     movieItemsContainer: makeNodeComponent("movieItemsContainer"),
+    freeBox: makeNodeComponent("freeBox"),
+    clearNominations: makeNodeComponent("clearNominations"),
 
     // Metadata about props expected for PlasmicNominations
     internalVariantProps: PlasmicNominations__VariantProps,

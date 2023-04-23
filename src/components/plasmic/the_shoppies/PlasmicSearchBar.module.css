@@ -36,14 +36,6 @@
   border-radius: 5px;
   padding: 16px;
 }
-.root:hover {
-  box-shadow: none;
-  background: var(--token-sPaTureut);
-}
-.root:hover {
-  box-shadow: none;
-  background: var(--token-sPaTureut);
-}
 .h2 {
   position: relative;
   width: 100%;

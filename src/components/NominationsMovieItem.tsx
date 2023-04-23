@@ -5,14 +5,27 @@ import {
 } from "./plasmic/the_shoppies/PlasmicNominationsMovieItem";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
+import { removeNominatedMovie } from "../valtio/movieStore";
+
 export interface NominationsMovieItemProps
-  extends DefaultNominationsMovieItemProps {}
+  extends DefaultNominationsMovieItemProps {
+  id: number;
+}
 
 function NominationsMovieItem_(
-  props: NominationsMovieItemProps,
+  { id, ...props }: NominationsMovieItemProps,
   ref: HTMLElementRefOf<"div">
 ) {
-  return <PlasmicNominationsMovieItem root={{ ref }} {...props} />;
+  const onClickRemove = () => {
+    removeNominatedMovie(id);
+  };
+  return (
+    <PlasmicNominationsMovieItem
+      root={{ ref }}
+      {...props}
+      onClick={onClickRemove}
+    />
+  );
 }
 
 const NominationsMovieItem = React.forwardRef(NominationsMovieItem_);

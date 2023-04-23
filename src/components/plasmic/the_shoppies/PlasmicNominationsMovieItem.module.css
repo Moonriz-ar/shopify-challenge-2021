@@ -1,11 +1,18 @@
 .root {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   position: relative;
-  width: auto;
+  width: 100%;
   height: auto;
   justify-content: flex-start;
   align-items: center;
+  min-width: 0;
+  border-radius: 4px;
+  padding: 8px;
+}
+.root:hover {
+  background: var(--token-sPaTureut);
+  cursor: pointer;
 }
 .freeBox {
   position: relative;

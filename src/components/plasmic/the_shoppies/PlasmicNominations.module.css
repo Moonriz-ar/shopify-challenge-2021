@@ -36,12 +36,6 @@
   border-radius: 5px;
   padding: 16px;
 }
-.root:hover {
-  background: var(--token-sPaTureut);
-}
-.root:hover {
-  background: var(--token-sPaTureut);
-}
 .h2 {
   position: relative;
   width: 100%;
@@ -94,6 +88,12 @@
   min-width: 0;
   padding: 8px;
 }
+.movieItemsContainerisEmpty {
+  display: none;
+}
+.movieItemsContainerisEmpty {
+  display: none;
+}
 .nominationsMovieItem__yXh4U:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
@@ -109,4 +109,26 @@
 .nominationsMovieItem__v9Odc:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
+}
+.freeBoxisEmpty {
+  display: none;
+}
+.clearNominations:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.clearNominationsisEmpty:global(.__wab_instance) {
+  display: none;
 }
