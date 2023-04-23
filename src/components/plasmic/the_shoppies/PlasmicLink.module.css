@@ -1,0 +1,11 @@
+.root {
+  color: var(--token-uqQf8_MBm);
+  position: relative;
+  font-weight: 700;
+}
+.root:visited {
+  color: var(--token-uqQf8_MBm);
+}
+.root:hover {
+  color: var(--token-VNf7Qsr15);
+}

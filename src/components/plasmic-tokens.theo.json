@@ -1,0 +1,79 @@
+{
+  "props": [
+    {
+      "name": "background",
+      "type": "color",
+      "value": "#2E2F2E",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "t2-aEL1rV"
+      }
+    },
+    {
+      "name": "primary-700",
+      "type": "color",
+      "value": "#539964",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "VNf7Qsr15"
+      }
+    },
+    {
+      "name": "primary-800",
+      "type": "color",
+      "value": "#438152",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "uqQf8_MBm"
+      }
+    },
+    {
+      "name": "secondary-300",
+      "type": "color",
+      "value": "#3A3A3A",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "Dq5z1Fk83"
+      }
+    },
+    {
+      "name": "secondary-500",
+      "type": "color",
+      "value": "#363736",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "ECrlptamg"
+      }
+    },
+    {
+      "name": "text-300",
+      "type": "color",
+      "value": "#F8EFEF",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "OkZKPGi6r"
+      }
+    },
+    {
+      "name": "text-500",
+      "type": "color",
+      "value": "#F5EAEA",
+      "category": "color",
+      "meta": {
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "id": "Ev9Bxuf9c"
+      }
+    }
+  ],
+  "global": {
+    "meta": {
+      "source": "plasmic.app"
+    }
+  }
+}

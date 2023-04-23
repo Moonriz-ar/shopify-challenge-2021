@@ -1,0 +1,198 @@
+{
+  "platform": "react",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
+  },
+  "images": {
+    "scheme": "inlined",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/static/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "src/components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+      "projectApiToken": "4FC5st5t6QgK8OPKwPdmno02c9GyU5sYtXv0upZ1FiLZCiLp4v3H7WyN9pn03q8gxY0oJlnut8a6oGPR7Bpqw",
+      "projectName": "The Shoppies",
+      "version": "latest",
+      "cssFilePath": "plasmic/the_shoppies/plasmic_the_shoppies.module.css",
+      "components": [
+        {
+          "id": "EM_oZrB6CcZo",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "Homepage.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "JXOduyYvIR",
+          "name": "Nominations",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicNominations.tsx",
+          "importSpec": {
+            "modulePath": "Nominations.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicNominations.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "dttfoU6lxO",
+          "name": "SearchBar",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicSearchBar.tsx",
+          "importSpec": {
+            "modulePath": "SearchBar.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicSearchBar.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "cmM4gm4zl6",
+          "name": "SearchResults",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicSearchResults.tsx",
+          "importSpec": {
+            "modulePath": "SearchResults.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicSearchResults.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "mca8JPO7Ivv",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        },
+        {
+          "id": "WLQZ7PHxvJH",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "IlC1hBC6tr",
+          "name": "Link",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicLink.tsx",
+          "importSpec": {
+            "modulePath": "Link.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicLink.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Z1TaGzJ1L3",
+          "name": "MovieItem",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicMovieItem.tsx",
+          "importSpec": {
+            "modulePath": "MovieItem.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicMovieItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "XShnP_NaZ3",
+          "name": "MovieItemIcon",
+          "type": "managed",
+          "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+          "renderModuleFilePath": "plasmic/the_shoppies/PlasmicMovieItemIcon.tsx",
+          "importSpec": {
+            "modulePath": "MovieItemIcon.tsx"
+          },
+          "cssFilePath": "plasmic/the_shoppies/PlasmicMovieItemIcon.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        }
+      ],
+      "icons": [
+        {
+          "id": "tXy0z4Cwj85",
+          "name": "SearchsvgIcon",
+          "moduleFilePath": "plasmic/the_shoppies/icons/PlasmicIcon__Searchsvg.tsx"
+        },
+        {
+          "id": "bGh_ZG8CEgo",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/the_shoppies/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "-i3g9EMhH9P",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/the_shoppies/icons/PlasmicIcon__Icon.tsx"
+        }
+      ],
+      "images": [],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "EworiaX_hb17H",
+          "name": "PlasmicHead",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "42omF9MzxmQp5",
+          "name": "Fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ]
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "A3NNzie5oThQ6",
+        "name": "Screen",
+        "projectId": "w9YkCMoNAxdUdLu1fVbgUv",
+        "contextFilePath": "plasmic/the_shoppies/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "cliVersion": "0.1.261",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.261/dist/plasmic.schema.json"
+}
