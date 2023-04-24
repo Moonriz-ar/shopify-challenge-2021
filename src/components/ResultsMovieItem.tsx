@@ -1,8 +1,5 @@
 import * as React from "react";
-import {
-  PlasmicResultsMovieItem,
-  DefaultResultsMovieItemProps,
-} from "./plasmic/the_shoppies/PlasmicResultsMovieItem";
+import { PlasmicResultsMovieItem } from "./plasmic/the_shoppies/PlasmicResultsMovieItem";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 import { Movie, addNominatedMovie, movieStore } from "../valtio/movieStore";

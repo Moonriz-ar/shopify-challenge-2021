@@ -4,15 +4,14 @@ import {
   DefaultButtonProps,
 } from "./plasmic/the_shoppies/PlasmicButton";
 import {
-  ButtonRef,
   HtmlAnchorOnlyProps,
   HtmlButtonOnlyProps,
 } from "@plasmicapp/react-web";
 
-export interface ButtonProps {
+export interface ButtonProps extends DefaultButtonProps {
   onClick: () => void;
 }
-function Button_(props: ButtonProps, ref: ButtonRef) {
+function Button_(props: ButtonProps) {
   const { onClick } = props;
   return <PlasmicButton {...props} onClick={onClick} />;
 }
