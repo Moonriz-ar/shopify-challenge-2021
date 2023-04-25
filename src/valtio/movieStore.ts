@@ -37,7 +37,9 @@ subscribe(movieStore, () => {
   localStorage.setItem("movieStore", JSON.stringify(movieStore));
 });
 
-// enable redux devtools extension
+// enable redux devtools extension, disable type checking errors on next line, to enable build step in vercel
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const unsub = devtools(movieStore, { name: "movieStore", enabled: true });
 
 // actions
