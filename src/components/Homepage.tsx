@@ -3,9 +3,8 @@
 import * as React from "react";
 import {
   PlasmicHomepage,
-  DefaultHomepageProps
+  DefaultHomepageProps,
 } from "./plasmic/the_shoppies/PlasmicHomepage";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -22,7 +21,7 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // total control over the props for your component.
 export interface HomepageProps extends DefaultHomepageProps {}
 
-function Homepage_(props: HomepageProps, ref: HTMLElementRefOf<"div">) {
+function Homepage_(props: HomepageProps) {
   // Use PlasmicHomepage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -38,7 +37,7 @@ function Homepage_(props: HomepageProps, ref: HTMLElementRefOf<"div">) {
   // By default, we are just piping all HomepageProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicHomepage home={{ ref }} {...props} />;
+  return <PlasmicHomepage {...props} />;
 }
 
 const Homepage = React.forwardRef(Homepage_);

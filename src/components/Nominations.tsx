@@ -3,7 +3,6 @@ import {
   PlasmicNominations,
   DefaultNominationsProps,
 } from "./plasmic/the_shoppies/PlasmicNominations";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 import { useSnapshot } from "valtio";
 import { movieStore, clearNominatedMovies } from "../valtio/movieStore";
@@ -11,7 +10,7 @@ import NominationsMovieItem from "./NominationsMovieItem";
 
 export interface NominationsProps extends DefaultNominationsProps {}
 
-function Nominations_(props: NominationsProps, ref: HTMLElementRefOf<"div">) {
+function Nominations_(props: NominationsProps) {
   const snap = useSnapshot(movieStore);
 
   const onClickClear = () => {
@@ -20,7 +19,6 @@ function Nominations_(props: NominationsProps, ref: HTMLElementRefOf<"div">) {
 
   return (
     <PlasmicNominations
-      root={{ ref }}
       {...props}
       // variant prop
       isEmpty={movieStore.nominatedMovies.length === 0}

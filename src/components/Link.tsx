@@ -3,9 +3,8 @@
 import * as React from "react";
 import {
   PlasmicLink,
-  DefaultLinkProps
+  DefaultLinkProps,
 } from "./plasmic/the_shoppies/PlasmicLink";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -22,7 +21,7 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // total control over the props for your component.
 export interface LinkProps extends DefaultLinkProps {}
 
-function Link_(props: LinkProps, ref: HTMLElementRefOf<"a">) {
+function Link_(props: LinkProps) {
   // Use PlasmicLink to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -38,7 +37,7 @@ function Link_(props: LinkProps, ref: HTMLElementRefOf<"a">) {
   // By default, we are just piping all LinkProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicLink root={{ ref }} {...props} />;
+  return <PlasmicLink {...props} />;
 }
 
 const Link = React.forwardRef(Link_);

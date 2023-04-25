@@ -3,15 +3,11 @@ import {
   PlasmicMovieItemIcon,
   DefaultMovieItemIconProps,
 } from "./plasmic/the_shoppies/PlasmicMovieItemIcon";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 export interface MovieItemIconProps extends DefaultMovieItemIconProps {}
 
-function MovieItemIcon_(
-  props: MovieItemIconProps,
-  ref: HTMLElementRefOf<"div">
-) {
-  return <PlasmicMovieItemIcon root={{ ref }} {...props} />;
+function MovieItemIcon_(props: MovieItemIconProps) {
+  return <PlasmicMovieItemIcon {...props} />;
 }
 
 const MovieItemIcon = React.forwardRef(MovieItemIcon_);

@@ -3,13 +3,12 @@ import {
   PlasmicSearchBar,
   DefaultSearchBarProps,
 } from "./plasmic/the_shoppies/PlasmicSearchBar";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 import { setMovieQueryString } from "../valtio/movieStore";
 
 export interface SearchBarProps extends DefaultSearchBarProps {}
 
-function SearchBar_(props: SearchBarProps, ref: HTMLElementRefOf<"div">) {
+function SearchBar_(props: SearchBarProps) {
   const [text, setText] = React.useState("");
 
   const onClickSearch = () => {
@@ -23,7 +22,6 @@ function SearchBar_(props: SearchBarProps, ref: HTMLElementRefOf<"div">) {
 
   return (
     <PlasmicSearchBar
-      root={{ ref }}
       {...props}
       textInput={{
         value: text,

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { PlasmicResultsMovieItem } from "./plasmic/the_shoppies/PlasmicResultsMovieItem";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 import { Movie, addNominatedMovie, movieStore } from "../valtio/movieStore";
 import { useSnapshot } from "valtio";
@@ -9,10 +8,7 @@ export interface ResultsMovieItemProps {
   movie: Movie;
 }
 
-function ResultsMovieItem_(
-  { movie, ...props }: ResultsMovieItemProps,
-  ref: HTMLElementRefOf<"div">
-) {
+function ResultsMovieItem_({ movie, ...props }: ResultsMovieItemProps) {
   const snap = useSnapshot(movieStore);
 
   const movieTitle = `${movie.title} (${movie.release_date.slice(0, 4)})`;
@@ -31,7 +27,6 @@ function ResultsMovieItem_(
 
   return (
     <PlasmicResultsMovieItem
-      root={{ ref }}
       {...props}
       // variant prop
       disabled={isDisabled}

@@ -3,7 +3,6 @@ import {
   PlasmicSearchResults,
   DefaultSearchResultsProps,
 } from "./plasmic/the_shoppies/PlasmicSearchResults";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 import { useQuery } from "@tanstack/react-query";
 
@@ -24,10 +23,7 @@ const fetchMovies = async (query: string) => {
   return data.results.slice(0, 10);
 };
 
-function SearchResults_(
-  props: SearchResultsProps,
-  ref: HTMLElementRefOf<"div">
-) {
+function SearchResults_(props: SearchResultsProps) {
   const snap = useSnapshot(movieStore);
   const { isLoading, isError, data, error } = useQuery<Movie[], Error>({
     queryKey: ["movies", snap.movieQueryString],
@@ -48,7 +44,6 @@ function SearchResults_(
 
   return (
     <PlasmicSearchResults
-      root={{ ref }}
       {...props}
       movieItemsContainer={{
         children: data.map((movie) => {

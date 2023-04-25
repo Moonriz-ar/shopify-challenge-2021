@@ -3,7 +3,6 @@ import {
   PlasmicNominationsMovieItem,
   DefaultNominationsMovieItemProps,
 } from "./plasmic/the_shoppies/PlasmicNominationsMovieItem";
-import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 import { removeNominatedMovie } from "../valtio/movieStore";
 
@@ -12,20 +11,11 @@ export interface NominationsMovieItemProps
   id: number;
 }
 
-function NominationsMovieItem_(
-  { id, ...props }: NominationsMovieItemProps,
-  ref: HTMLElementRefOf<"div">
-) {
+function NominationsMovieItem_({ id, ...props }: NominationsMovieItemProps) {
   const onClickRemove = () => {
     removeNominatedMovie(id);
   };
-  return (
-    <PlasmicNominationsMovieItem
-      root={{ ref }}
-      {...props}
-      onClick={onClickRemove}
-    />
-  );
+  return <PlasmicNominationsMovieItem {...props} onClick={onClickRemove} />;
 }
 
 const NominationsMovieItem = React.forwardRef(NominationsMovieItem_);
