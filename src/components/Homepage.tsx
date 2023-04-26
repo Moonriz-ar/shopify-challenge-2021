@@ -6,6 +6,9 @@ import {
   DefaultHomepageProps,
 } from "./plasmic/the_shoppies/PlasmicHomepage";
 
+import { movieStore } from "../valtio/movieStore";
+import { useSnapshot } from "valtio";
+
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
 // attach to named nodes in your component.
@@ -22,6 +25,9 @@ import {
 export interface HomepageProps extends DefaultHomepageProps {}
 
 function Homepage_(props: HomepageProps) {
+  const snap = useSnapshot(movieStore);
+  const isNominatedListFull = snap.nominatedMovies.length >= 5;
+
   // Use PlasmicHomepage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -37,7 +43,9 @@ function Homepage_(props: HomepageProps) {
   // By default, we are just piping all HomepageProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicHomepage {...props} />;
+  return (
+    <PlasmicHomepage {...props} isNominatedListFull={isNominatedListFull} />
+  );
 }
 
 const Homepage = React.forwardRef(Homepage_);

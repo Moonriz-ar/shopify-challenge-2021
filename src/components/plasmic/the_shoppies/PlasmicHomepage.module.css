@@ -25,6 +25,9 @@
     grid-column: 4;
   }
 }
+:where(.homeisNominatedListFull > *) {
+  grid-column: 4;
+}
 .section {
   display: grid;
   position: relative;
@@ -86,6 +89,31 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  color: var(--token-Ev9Bxuf9c);
+  min-width: 0;
+}
+.freeBox {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: var(--token-uqQf8_MBm);
+  flex-direction: row;
+  min-width: 0;
+  display: none;
+  border-radius: 5px;
+  padding: 16px;
+}
+.freeBoxisNominatedListFull {
+  display: flex;
+}
+.text__ksshi {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  left: auto;
+  top: auto;
   color: var(--token-Ev9Bxuf9c);
   min-width: 0;
 }

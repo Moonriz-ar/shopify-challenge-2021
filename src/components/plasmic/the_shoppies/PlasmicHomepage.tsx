@@ -43,10 +43,16 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_the_shoppies.module.css"; // plasmic-import: w9YkCMoNAxdUdLu1fVbgUv/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: EM_oZrB6CcZo/css
 
-export type PlasmicHomepage__VariantMembers = {};
-export type PlasmicHomepage__VariantsArgs = {};
+export type PlasmicHomepage__VariantMembers = {
+  isNominatedListFull: "isNominatedListFull";
+};
+export type PlasmicHomepage__VariantsArgs = {
+  isNominatedListFull?: SingleBooleanChoiceArg<"isNominatedListFull">;
+};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
-export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
+export const PlasmicHomepage__VariantProps = new Array<VariantPropType>(
+  "isNominatedListFull"
+);
 
 export type PlasmicHomepage__ArgsType = {};
 type ArgPropType = keyof PlasmicHomepage__ArgsType;
@@ -57,6 +63,7 @@ export type PlasmicHomepage__OverridesType = {
   section?: p.Flex<"section">;
   h1?: p.Flex<"h1">;
   link?: p.Flex<"a">;
+  freeBox?: p.Flex<"div">;
   columns?: p.Flex<"div">;
   searchBar?: p.Flex<typeof SearchBar>;
   searchResults?: p.Flex<typeof SearchResults>;
@@ -64,6 +71,7 @@ export type PlasmicHomepage__OverridesType = {
 };
 
 export interface DefaultHomepageProps {
+  isNominatedListFull?: SingleBooleanChoiceArg<"isNominatedListFull">;
   className?: string;
 }
 
@@ -95,6 +103,19 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
   const [$queries, setDollarQueries] = React.useState({});
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "isNominatedListFull",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          $props.isNominatedListFull
+      }
+    ],
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsa3NNzie5OThQ6()
@@ -114,7 +135,14 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
-            sty.home
+            sty.home,
+            {
+              [sty.homeisNominatedListFull]: hasVariant(
+                $state,
+                "isNominatedListFull",
+                "isNominatedListFull"
+              )
+            }
           )}
         >
           {(
@@ -192,6 +220,33 @@ function PlasmicHomepage__RenderFunc(props: {
                   </React.Fragment>
                 </React.Fragment>
               </div>
+              {(
+                hasVariant($state, "isNominatedListFull", "isNominatedListFull")
+                  ? true
+                  : true
+              ) ? (
+                <div
+                  data-plasmic-name={"freeBox"}
+                  data-plasmic-override={overrides.freeBox}
+                  className={classNames(projectcss.all, sty.freeBox, {
+                    [sty.freeBoxisNominatedListFull]: hasVariant(
+                      $state,
+                      "isNominatedListFull",
+                      "isNominatedListFull"
+                    )
+                  })}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ksshi
+                    )}
+                  >
+                    {"You have selected 5 nominations!"}
+                  </div>
+                </div>
+              ) : null}
               <p.Stack
                 as={"div"}
                 data-plasmic-name={"columns"}
@@ -207,7 +262,13 @@ function PlasmicHomepage__RenderFunc(props: {
                   <SearchBar
                     data-plasmic-name={"searchBar"}
                     data-plasmic-override={overrides.searchBar}
-                    className={classNames("__wab_instance", sty.searchBar)}
+                    className={classNames("__wab_instance", sty.searchBar, {
+                      [sty.searchBarisNominatedListFull]: hasVariant(
+                        $state,
+                        "isNominatedListFull",
+                        "isNominatedListFull"
+                      )
+                    })}
                   />
 
                   <SearchResults
@@ -238,6 +299,7 @@ const PlasmicDescendants = {
     "section",
     "h1",
     "link",
+    "freeBox",
     "columns",
     "searchBar",
     "searchResults",
@@ -247,6 +309,7 @@ const PlasmicDescendants = {
     "section",
     "h1",
     "link",
+    "freeBox",
     "columns",
     "searchBar",
     "searchResults",
@@ -254,6 +317,7 @@ const PlasmicDescendants = {
   ],
   h1: ["h1"],
   link: ["link"],
+  freeBox: ["freeBox"],
   columns: ["columns", "searchBar", "searchResults", "nominations"],
   searchBar: ["searchBar"],
   searchResults: ["searchResults"],
@@ -267,6 +331,7 @@ type NodeDefaultElementType = {
   section: "section";
   h1: "h1";
   link: "a";
+  freeBox: "div";
   columns: "div";
   searchBar: typeof SearchBar;
   searchResults: typeof SearchResults;
@@ -336,6 +401,7 @@ export const PlasmicHomepage = Object.assign(
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
     link: makeNodeComponent("link"),
+    freeBox: makeNodeComponent("freeBox"),
     columns: makeNodeComponent("columns"),
     searchBar: makeNodeComponent("searchBar"),
     searchResults: makeNodeComponent("searchResults"),
